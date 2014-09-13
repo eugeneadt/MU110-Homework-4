@@ -30,7 +30,6 @@ class ListViewController: UITableViewController {
         navigationController!.presentViewController(loginController, animated: true, completion: nil)
         //}
         */
- 
         
         
         
@@ -42,7 +41,6 @@ class ListViewController: UITableViewController {
             self.items = JSON as NSMutableArray
             
             self.tableView.reloadData()
-            
             
             
         }
@@ -82,16 +80,12 @@ class ListViewController: UITableViewController {
             let dictionary = item[indexPath.row] as NSDictionary
             
             cell.textLabel?.text = dictionary["name"] as NSString
-
         }
         
+        return cell
         
-    return cell
-        
-       // cell.detailTextLabel?.text = "Описание - \(object.description)"
         
     }
-    
     
     
     
@@ -101,8 +95,8 @@ class ListViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let object = items![indexPath.row] as NSDictionary
                 (segue.destinationViewController as DetailViewController).detailItem = object
-      
-            
+                
+                
             }
         }
     }
